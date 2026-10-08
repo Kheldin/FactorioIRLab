@@ -1,0 +1,193 @@
+---------------------------------------------------------------------------------------------------
+Version: 2.0.1
+Date: 12. 10. 2024
+  Changes:
+    - Remove error reporting (thank you for your service)
+---------------------------------------------------------------------------------------------------
+Version: 2.0.0
+Date: 12. 10. 2024
+  Changes:
+    - Support for 2.0 API Updates
+    - Colours updated for Space Age science packs
+    - Option to reduce quality
+---------------------------------------------------------------------------------------------------
+Version: 1.1.4
+Date: 04. 05. 2024
+  Changes:
+    - Support for multiple surfaces (thanks Hi-ImKyle!)
+    - Added getIngredientColor interface (thanks oorzkws!)
+---------------------------------------------------------------------------------------------------
+Version: 1.1.3
+Date: 05. 03. 2021
+  Changes:
+    - Fixed issue when claiming non-lab entities in Ruins mod (thanks Deltaqyto!)
+---------------------------------------------------------------------------------------------------
+Version: 1.1.2
+Date: 03. 03. 2021
+  Changes:
+    - Support for AbandonedRuins (requires version 1.1.4 of the mod)
+---------------------------------------------------------------------------------------------------
+Version: 1.1.1
+Date: 29. 11. 2020
+  Changes:
+    - Remove lights, and add new additive glow from base mod
+---------------------------------------------------------------------------------------------------
+Version: 1.0.2
+Date: 06. 03. 2020
+  Fixes:
+    - Properly fixed on_init issue
+---------------------------------------------------------------------------------------------------
+Version: 1.0.1
+Date: 25. 02. 2020
+  Fixes:
+    - Fixed an issue where remote calls in on_init would run into nil references
+---------------------------------------------------------------------------------------------------
+Version: 1.0.0
+Date: 14. 02. 2020
+  Changes:
+    - Removed direct support for other mods. Instead there is an API so that mods can manage their own compatibility. (See FAQ)
+  Fixes:
+    - Fixed an issue where partially unknown ingredient lists would cause a crash (thanks Hornwitser!)
+    - Bumped version compatibility to 1.1.0 (I didn't read the patch notes)
+---------------------------------------------------------------------------------------------------
+Version: 0.18.0
+Date: 27. 01. 2020
+  Changes:
+    - Bumped version requirements to 0.18 (I didn't read the patch notes)
+    - Changed versioning scheme to reflect minor Factorio version
+---------------------------------------------------------------------------------------------------
+Version: 0.1.16
+Date: 29. 12. 2019
+  Changes:
+    - Support for BetterFlasks
+    - Fixed potential desync due to changing data on load
+---------------------------------------------------------------------------------------------------
+Version: 0.1.15
+Date: 23. 12. 2019
+  Changes:
+    - Support Krastorio (thanks, nicolas-lang!)
+---------------------------------------------------------------------------------------------------
+Version: 0.1.14
+Date: 12. 10. 2019
+  Changes:
+    - Support Industrial Revolution science packs
+---------------------------------------------------------------------------------------------------
+Version: 0.1.13
+Date: 27. 06. 2019
+  Changes:
+    - Added some optional dependencies so that DiscoScience loads after them, avoiding missing colours
+---------------------------------------------------------------------------------------------------
+Version: 0.1.12
+Date: 27. 06. 2019
+  Changes:
+    - Support for Big Lab
+    - Support for Schall Machine Scaling
+  Fixes:
+    - Fixed a startup error when no labs had matching colours
+---------------------------------------------------------------------------------------------------
+Version: 0.1.11
+Date: 27. 05. 2019
+  Changes:
+    - Support for Bob's Tech labs
+---------------------------------------------------------------------------------------------------
+Version: 0.1.10
+Date: 09. 05. 2019
+  Changes:
+    - Support for Science Cost Tweaker labs
+---------------------------------------------------------------------------------------------------
+Version: 0.1.9
+Date: 03. 05. 2019
+  Changes:
+    - Only animate regular labs (ignore e.g. Space Exploration labs, or NPE lab)
+---------------------------------------------------------------------------------------------------
+Version: 0.1.8
+Date: 30. 04. 2019
+  Bugfixes:
+    - Fixed upgrading from very old versions of the mod
+---------------------------------------------------------------------------------------------------
+Version: 0.1.7
+Date: 28. 04. 2019
+  Bugfixes:
+    - Handle missing icons gracefully
+---------------------------------------------------------------------------------------------------
+Version: 0.1.6
+Date: 27. 04. 2019
+  Changes:
+    - Added more colour patterns
+---------------------------------------------------------------------------------------------------
+Version: 0.1.5
+Date: 22. 04. 2019
+  Bugfixes:
+    - Handle missing render objects gracefully
+    - Fixed multiplayer check (thanks Klonan)
+---------------------------------------------------------------------------------------------------
+Version: 0.1.4
+Date: 15. 04. 2019
+  Bugfixes:
+    - Only report errors in singleplayer (since messages don't work in multiplayer)
+---------------------------------------------------------------------------------------------------
+Version: 0.1.3
+Date: 14. 04. 2019
+  Changes:
+    - Colours for some of the Py mods (thanks wchristian)
+---------------------------------------------------------------------------------------------------
+Version: 0.1.2
+Date: 14. 04. 2019
+  Bugfixes:
+    - Fixed a possible fatal error when light direction goes negative
+---------------------------------------------------------------------------------------------------
+Version: 0.1.1
+Date: 14. 04. 2019
+  Bugfixes:
+    - Fixed error handling (errors would stop the game rather than showing a message)
+---------------------------------------------------------------------------------------------------
+Version: 0.1.0
+Date: 13. 04. 2019
+  Changes:
+    - Labs light up in patterns centered around the player
+    - Updates are spread over 6 ticks instead of 5, slightly compensating for increased complexity
+---------------------------------------------------------------------------------------------------
+Version: 0.0.10
+Date: 12. 04. 2019
+  Changes:
+    - Log missing ingredient colours on load
+  Bugfixes:
+    - Stopped indexing a table by LuaEntity (this should prevent RAM leak)
+    - Mutable state is all stored in global (this should prevent desyncs)
+---------------------------------------------------------------------------------------------------
+Version: 0.0.9
+Date: 11. 04. 2019
+  Changes:
+    - Colours mapped by icons instead of tech names (thanks sparr for the idea)
+    - Support for Bob's Tech
+    - Unrecognized science packs use magenta instead of white
+---------------------------------------------------------------------------------------------------
+Version: 0.0.8
+Date: 10. 04. 2019
+  Bugfixes:
+    - Addressed potential issue with technologies that have no ingredients
+    - Warn about unregistered labs being deleted, or labs being registered twice
+---------------------------------------------------------------------------------------------------
+Version: 0.0.7
+Date: 02. 04. 2019
+  Bugfixes:
+    - Fixed fatal Lua error when encountering lab whose deletion was not registered
+---------------------------------------------------------------------------------------------------
+Version: 0.0.6
+Date: 31. 03. 2019
+  Changes:
+    - When encountering recognised non-fatal errors, DiscoScience will alert the user with a dialog instead of silently ignoring the issue.
+  Bugfixes:
+    - Fixed fatal Lua error when encountering a malformed entity callback
+---------------------------------------------------------------------------------------------------
+Version: 0.0.5
+Date: 30. 03. 2019
+  Changes:
+    - Icon now looks cooler than the in-game graphics
+  Bugfixes:
+    - Fixed fatal Lua error when encountering unregistered lab. This should increase compatibility with mods that create entities without raising events.
+---------------------------------------------------------------------------------------------------
+Version: 0.0.4
+Date: 20. 03. 2019
+  Bugfixes:
+    - Fixed fatal Lua error when encountering ingredient with unknown colour. Unknown ingredients now default to white.
