@@ -97,12 +97,12 @@ labColoring.updateRenderers = function (event, labRenderers, researchColor)
     for name, force in pairs(game.forces) do
         local forceResearchColors = researchColor.getColorsForResearch(force.current_research)
         
-        -- Exécution toutes les 60 ticks (1 seconde) si une recherche est en cours
-        if event.tick % 10 == 0 and force.current_research then
+        -- Every 2 tick
+        if event.tick % 2 == 0 and force.current_research then
             local sum_r, sum_g, sum_b = 0, 0, 0
             local count = 0
             
-            -- Extraction des couleurs (gère si c'est une liste de couleurs ou une seule)
+            -- Extract colors
             if forceResearchColors.r then
                 sum_r = forceResearchColors.r
                 sum_g = forceResearchColors.g or 0
@@ -125,13 +125,13 @@ labColoring.updateRenderers = function (event, labRenderers, researchColor)
                 local avg_g = sum_g / count
                 local avg_b = sum_b / count
 
-                -- -- Détection du "Noir" (valeurs RGB basses, typique de la science militaire)
-                -- if avg_r < 0.4 and avg_g < 0.4 and avg_b < 0.4 then
-                --     out_val = 3
-                -- S'il y a plus de rouge que de vert
+                -- Black (Low RGB values, military science)
+                if avg_r < 0.4 and avg_g < 0.4 and avg_b < 0.4 then
+                    out_val = 3
+                -- Red
                 if avg_r > 0.90 then
                     out_val = 1
-                -- S'il y a plus de vert que de rouge
+                -- Green
                 else
                     out_val = 2
                 end
