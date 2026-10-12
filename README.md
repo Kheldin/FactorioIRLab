@@ -14,7 +14,7 @@ This is my first embedded project. Everything runs **bare metal**: no HAL, no CM
  Factorio ──Modified Disco Science mod──> disco_science_color.txt
                                               │  read every 10 ms
                                               ▼
-                                          uart.py  (PC)
+                                          bridge.py  (PC)
                                               │  1 ASCII byte, 115200 baud, 8N1
                                               ▼
                                   STM32F103: USART2 (PA3 = RX)
@@ -25,7 +25,7 @@ This is my first embedded project. Everything runs **bare metal**: no HAL, no CM
 ```
 
 1. A modified version of the Disco Science mod writes the colour of the science currently being researched (`1`, `2` or `3`) to `script-output/disco_science_color.txt`.
-2. `uart.py` reads that file and, when the value changes, sends it to the board over a serial port.
+2. `bridge.py` reads that file and, when the value changes, sends it to the board over a serial port.
 3. The firmware polls USART2 and turns on the matching output.
 
 
@@ -66,7 +66,7 @@ The baud rate is computed for the default 8 MHz internal clock (no PLL is config
 | `startup_stm32f103xb.s` | Startup code and vector table                  |
 | `script.ld`             | Linker script                                  |
 | `Makefile`              | Build and flash                                |
-| `uart.py`               | PC side: watches the colour file, sends to UART |
+| `bridge.py`               | PC side: watches the colour file, sends to UART |
 
 ## Build and flash
 
@@ -84,8 +84,8 @@ make re       # clean rebuild
 pip install pyserial
 ```
 
-1. Edit `PORT` and `DATA_FILE` at the top of `uart.py` for your machine.
-2. Run `python uart.py`.
+1. Edit `PORT` and `DATA_FILE` at the top of `bridge.py` for your machine.
+2. Run `python bridge.py`.
 3. Start Factorio with the modified Disco Science mod enabled (or any mod that writes the colour to the file).
 
 ## Credits
